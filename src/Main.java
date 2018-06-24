@@ -6,8 +6,8 @@ public class Main {
 //        Sally goes out each weekend to pick
 //        fruit and vegetables from her garden.
 //        She carries a basket with her,
-//        reaches her hand out(SCANNER) to the various fruits and vegetables,
-//        and places them into the basket(LIST).
+//        reaches her hand out(Scanner or ArrayList) to the various fruits and vegetables,
+//        and places them into the basket(ArrayList).
 //        Sally wants to be able to dump the contents of the basket
 //        into a sorting machine that will
 //        separate the fruits from the vegetables.
@@ -19,16 +19,16 @@ public class Main {
         {
             food = new ArrayList<String>() {{
                 add("fruit");
-                add("vegetable");
+                add("Vegetable");
                 add("fruit");
                 add("vegetable");
                 add("vegetable");
-                add("fruit");
+                add("Fruit");
                 add("fruit");
             }};
         }
-        //Instantiate Sally class with food arraylist
-        Sally m = new Sally(food);
+        //Instantiate SortingMachine class with food arraylist
+        SortingMachine m = new SortingMachine(food);
 
         System.out.println("Number of Fruits: " + m.getFruits());
         System.out.println("Number of Vegetables: " + m.getVegetables());
