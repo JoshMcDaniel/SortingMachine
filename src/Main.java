@@ -5,36 +5,35 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Test input values.
-        ArrayList<String> food;
+        //Instantiate classes.
+        Fruits fruitObj = new Fruits();
+        Vegetables vegetableObj = new Vegetables();
+        final Object apple = new Apple();
+        final Object strawberry = new Strawberry();
+        final Object watermelon = new Watermelon();
+        final Object broccoli = new Broccoli();
+        final Object carrot = new Carrot();
+        final Object pea = new Pea();
+
+        //Test input Object values.
+        ArrayList<Object> food;
         {
-            food = new ArrayList<String>() {{
-                add("Strawberry");
-                add("Broccoli");
-                add("Apple");
-                add("Carrot");
-                add("Apple");
-                add("Strawberry");
-                add("Pea");
+            food = new ArrayList<Object>() {{
+                add(apple);
+                add(strawberry);
+                add(watermelon);
+                add(broccoli);
+                add(carrot);
+                add(pea);
+                add(apple);
             }};
         }
 
-        //Instantiate classes.
-       Fruits fruitObj = new Fruits();
-        Vegetables vegetableObj = new Vegetables();
-
-        //Loops through food array list and compares to values within Fruits & Vegetables String arrays.
-        for (String aFood : food) {
-            //Loops through Fruit String array.
-            for (String fruitName : fruitObj.getName())
-                if (aFood.equalsIgnoreCase(fruitName)) {
-                    fruitObj.incFruitCount();
-                }
-            //Loops through Vegetables String array.
-            for (String vegName : vegetableObj.getName()) {
-                if (aFood.equalsIgnoreCase(vegName)) {
-                    vegetableObj.incVegCount();
-                }
+        for (Object aFood : food) {
+            if (aFood instanceof Fruits) {
+                fruitObj.incFruitCount();
+            } else if (aFood instanceof Vegetables) {
+                vegetableObj.incVegCount();
             }
         }
 
